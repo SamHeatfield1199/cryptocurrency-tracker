@@ -8,11 +8,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import SwiperCore, { Autoplay } from "swiper";
 import "./styles.css";
+import { numberWithCommas } from "../CoinsTable";
 
 SwiperCore.use([Autoplay]);
-export function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
 
 const Carousel = () => {
   const useStyles = makeStyles((theme) => ({
@@ -85,7 +83,7 @@ const Carousel = () => {
                 <span
                   style={{
                     color:
-                      coin?.price_change_percentage_24h >= 0 > 0
+                      coin?.price_change_percentage_24h > 0
                         ? "rgb(14, 203, 129)"
                         : "red",
                     fontWeight: 500,
