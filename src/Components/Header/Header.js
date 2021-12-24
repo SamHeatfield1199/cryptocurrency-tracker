@@ -33,7 +33,7 @@ const darkTheme = createTheme({
 });
 
 
-const Header = () => {
+function Header() {
   const navigate = useNavigate();
   const { currency, setCurrency } = CryptoState();
   const classes = useStyles();
@@ -42,7 +42,7 @@ const Header = () => {
     <AppBar position="static" color="transparent">
       <Container>
         <Toolbar>
-          <Typography  onClick ={ () => navigate('/')} variant="h6" className={classes.title}>
+          <Typography  onClick ={ () => navigate(`/`)} variant="h6" className={classes.title}>
             Crypto Atlas
           </Typography>
           {/* <Button color="inherit">Login</Button> */}

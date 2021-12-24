@@ -21,7 +21,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Banner = () => {
+function Banner()  {
   const classes = useStyles();
   return (
     <div className={classes.banner}>

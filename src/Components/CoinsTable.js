@@ -21,11 +21,11 @@ import { makeStyles } from "@material-ui/styles";
 import { useNavigate } from "react-router-dom";
 import { Pagination } from "@material-ui/lab";
 
-export function numberWithCommas(x) {
+export  function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-const CoinsTable = () => {
+export default function  CoinsTable ()  {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
@@ -41,7 +41,6 @@ const CoinsTable = () => {
       },
       fontFamily: "Montserrat",
     },
-
   });
 
   const classes = useStyles();
@@ -59,11 +58,13 @@ const CoinsTable = () => {
   const fetchCoins = async () => {
     setLoading(true);
     const { data } = await axios.get(CoinList(currency));
+    console.log(data)
     setCoins(data);
     setLoading(false);
   };
   useEffect(() => {
     fetchCoins();
+    // eslint-disable-next-line
   }, [currency]);
 
   const handleSearch = () => {
@@ -202,4 +203,3 @@ const CoinsTable = () => {
   );
 };
 
-export default CoinsTable;
