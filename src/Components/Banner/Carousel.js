@@ -88,15 +88,14 @@ const Carousel = () => {
         infinite
         autoPlayInterval={1000}
         animationDuration={1500}
-        disableDotsControls
-        disableButtonsControls
         responsive={responsive}
         items={items}
         autoPlay
+        disableDotsControls
+        disableButtonsControls
       />
     </div>
   );
 };
 
 export default Carousel;
-

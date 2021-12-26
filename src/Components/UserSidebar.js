@@ -30,7 +30,7 @@ const useStyles = makeStyles({
   logout: {
     height: "8%",
     width: "100%",
-    backgroundColor: "#EEBC1D",
+    backgroundColor: "#7B3094",
     marginTop: 20,
   },
   picture: {

@@ -88,22 +88,26 @@ const CoinPage = () => {
   const addToWatchlist = async () => {
     const coinRef = doc(db, "watchlist", user.uid);
     try {
-      await setDoc(coinRef, {
-        coins: watchList ? [...watchList, coin.id] : [coin?.id],
-      });
+      await setDoc(
+        coinRef,
+        { coins: watchList ? [...watchList, coin?.id] : [coin?.id] },
+        { merge: true }
+      );
+
       setAlert({
         open: true,
-        message: `${coin.name} Removed from the Watchlist !`,
+        message: `${coin.name} Added to the Watchlist !`,
         type: "success",
       });
-    } catch (e) {
+    } catch (error) {
       setAlert({
         open: true,
-        message: e.message,
+        message: error.message,
         type: "error",
       });
     }
   };
+
   const removeFromWatchlist = async () => {
     const coinRef = doc(db, "watchlist", user.uid);
     try {
@@ -126,7 +130,6 @@ const CoinPage = () => {
       });
     }
   };
-
   return (
     <div className={classes.container}>
       <div className={classes.sidebar}>
@@ -194,14 +197,32 @@ const CoinPage = () => {
               )}
             </Typography>
           </span>
+          <span style={{ display: "flex" }}>
+            <Typography variant="h5" className={classes.heading}>
+              Homepage:
+            </Typography>
+            &nbsp; &nbsp;
+            <Typography
+              variant="h5"
+              style={{
+                fontFamily: "Montserrat",
+                overflow: "hidden"
+              }}
+            >
+              <a href={coin?.links.homepage[0]} target="_blank" rel="noreferrer">
+              &nbsp;{coin?.links.homepage[0]}
+              </a>
+            </Typography>
 
+          </span>
+         
           {user && (
             <Button
               variant="outlined"
               style={{
                 width: "100%",
                 height: 40,
-                backgroundColor: inWatchlist ? "#ff0000" : "#EEBC1D",
+                backgroundColor: inWatchlist ? "#ff0000" : "#7B3094",
               }}
               onClick={inWatchlist ? removeFromWatchlist : addToWatchlist}
             >

@@ -11,14 +11,14 @@ import {
 import { makeStyles } from "@material-ui/styles";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { CryptoState } from "../../CryptoContext";
-import AuthModal from "../Authentication/AuthModal";
-import UserSidebar from "../UserSidebar";
+import { CryptoState } from "../CryptoContext";
+import AuthModal from "./Authentication/AuthModal";
+import UserSidebar from "./UserSidebar";
 
 const useStyles = makeStyles((theme) => ({
   title: {
     flex: 1,
-    color: "gold",
+    color: "white",
     fontFamily: "Montserrat",
     fontWeight: "bold",
     cursor: "pointer",

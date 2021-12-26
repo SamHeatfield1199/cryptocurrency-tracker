@@ -31,7 +31,8 @@ export default function  CoinsTable ()  {
 
   const useStyles = makeStyles({
     row: {
-      backgroundColor: "#16171a",
+   
+      backgroundColor: "#1D1933",
       cursor: "pointer",
       "&:hover": {
         backgroundColor: "#131111",
@@ -68,7 +69,7 @@ export default function  CoinsTable ()  {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Container style={{ textAlign: "center" }}>
+      <Container style={{ textAlign: "center"}}>
         <Typography
           variant="h4"
           style={{ margin: 18, fontFamily: "Montserrat" }}
@@ -83,18 +84,18 @@ export default function  CoinsTable ()  {
           onChange={(e) => setSearch(e.target.value)}
         ></TextField>
 
-        <TableContainer>
+        <TableContainer style={{borderRadius: 5 }}>
           {loading ? (
             <LinearProgress style={{ backgroundColor: "gold" }} />
           ) : (
             <Table>
-              <TableHead style={{ backgroundColor: "#EEBC1D" }}>
+              <TableHead style={{ backgroundColor: "#7B3094"}}>
                 <TableRow>
                   {["Coin", "Price", "24h Change", "Market Cap"].map((head) => (
                     <TableCell
                       style={{
-                        color: "black",
-                        fontWeight: "700",
+                        color: "white",
+                        fontWeight: "600",
                         fontFamily: "Montserrat",
                       }}
                       key={head}
@@ -166,7 +167,7 @@ export default function  CoinsTable ()  {
                           {numberWithCommas(
                             row.market_cap.toString().slice(0, -6)
                           )}
-                          M
+                         
                         </TableCell>
                       </TableRow>
                     );

@@ -7,5 +7,21 @@
 }
 a {
   text-decoration: none;
-  color: gold;
+  color: #7B3094;
+}
+a:hover{
+  cursor: pointer;
+}
+
+
+body::-webkit-scrollbar {
+  width: 0.7em;
+
+}
+ 
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #7B3094;
+  outline: 1px solid #7B3094;
+  border-radius: 10px;
 }
