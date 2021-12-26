@@ -1,6 +1,4 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { CoinList } from "../config/api";
 import { CryptoState } from "../CryptoContext";
 import { useEffect } from "react";
 import {
@@ -26,10 +24,9 @@ export  function numberWithCommas(x) {
 }
 
 export default function  CoinsTable ()  {
-  const [coins, setCoins] = useState([]);
-  const [loading, setLoading] = useState(false);
+
   const [search, setSearch] = useState("");
-  const { currency, symbol } = CryptoState();
+  const { currency, symbol, coins, loading, fetchCoins } = CryptoState();
   const [page, setPage] = useState(1);
 
   const useStyles = makeStyles({
@@ -55,13 +52,7 @@ export default function  CoinsTable ()  {
     },
   });
 
-  const fetchCoins = async () => {
-    setLoading(true);
-    const { data } = await axios.get(CoinList(currency));
-    console.log(data)
-    setCoins(data);
-    setLoading(false);
-  };
+
   useEffect(() => {
     fetchCoins();
     // eslint-disable-next-line
