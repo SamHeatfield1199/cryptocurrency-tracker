@@ -7,21 +7,18 @@
 }
 a {
   text-decoration: none;
-  color: #7B3094;
+  color: #7b3094;
 }
-a:hover{
+a:hover {
   cursor: pointer;
 }
 
-
 body::-webkit-scrollbar {
   width: 0.7em;
-
 }
- 
- 
+
 body::-webkit-scrollbar-thumb {
-  background-color: #7B3094;
-  outline: 1px solid #7B3094;
+  background-color: #7b3094;
+  outline: 1px solid #7b3094;
   border-radius: 10px;
 }

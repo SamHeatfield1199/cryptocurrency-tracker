@@ -19,19 +19,17 @@ import { makeStyles } from "@material-ui/styles";
 import { useNavigate } from "react-router-dom";
 import { Pagination } from "@material-ui/lab";
 
-export  function numberWithCommas(x) {
+export function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-export default function  CoinsTable ()  {
-
+export default function CoinsTable() {
   const [search, setSearch] = useState("");
   const { currency, symbol, coins, loading, fetchCoins } = CryptoState();
   const [page, setPage] = useState(1);
 
   const useStyles = makeStyles({
     row: {
-   
       backgroundColor: "#1D1933",
       cursor: "pointer",
       "&:hover": {
@@ -53,7 +51,6 @@ export default function  CoinsTable ()  {
     },
   });
 
-
   useEffect(() => {
     fetchCoins();
     // eslint-disable-next-line
@@ -69,7 +66,7 @@ export default function  CoinsTable ()  {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Container style={{ textAlign: "center"}}>
+      <Container style={{ textAlign: "center" }}>
         <Typography
           variant="h4"
           style={{ margin: 18, fontFamily: "Montserrat" }}
@@ -84,12 +81,12 @@ export default function  CoinsTable ()  {
           onChange={(e) => setSearch(e.target.value)}
         ></TextField>
 
-        <TableContainer style={{borderRadius: 5 }}>
+        <TableContainer style={{ borderRadius: 5 }}>
           {loading ? (
             <LinearProgress style={{ backgroundColor: "gold" }} />
           ) : (
             <Table>
-              <TableHead style={{ backgroundColor: "#7B3094"}}>
+              <TableHead style={{ backgroundColor: "#7B3094" }}>
                 <TableRow>
                   {["Coin", "Price", "24h Change", "Market Cap"].map((head) => (
                     <TableCell
@@ -167,7 +164,6 @@ export default function  CoinsTable ()  {
                           {numberWithCommas(
                             row.market_cap.toString().slice(0, -6)
                           )}
-                         
                         </TableCell>
                       </TableRow>
                     );
@@ -193,5 +189,4 @@ export default function  CoinsTable ()  {
       </Container>
     </ThemeProvider>
   );
-};
-
+}

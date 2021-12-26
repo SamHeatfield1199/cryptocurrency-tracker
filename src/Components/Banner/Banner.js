@@ -7,7 +7,7 @@ const useStyles = makeStyles(() => ({
     backgroundImage: "url(./banner.png)",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
-    backgroundSize: "cover"
+    backgroundSize: "cover",
   },
   bannerContent: {
     height: 400,
@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-function Banner()  {
+function Banner() {
   const classes = useStyles();
   return (
     <div className={classes.banner}>
@@ -55,6 +55,6 @@ function Banner()  {
       </Container>
     </div>
   );
-};
+}
 
 export default Banner;

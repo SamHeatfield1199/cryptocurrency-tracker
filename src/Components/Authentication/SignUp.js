@@ -4,7 +4,7 @@ import { CryptoState } from "../../CryptoContext";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
 
-const SignUp =  ({ handleClose }) => {
+const SignUp = ({ handleClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -26,7 +26,7 @@ const SignUp =  ({ handleClose }) => {
         email,
         password
       );
-     
+
       setAlert({
         open: true,
         message: `Sign Up Successful. Welcome ${result.user.email}`,

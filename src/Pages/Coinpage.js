@@ -33,7 +33,6 @@ const CoinPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-
   const useStyles = makeStyles((theme) => ({
     container: {
       display: "flex",
@@ -206,16 +205,19 @@ const CoinPage = () => {
               variant="h5"
               style={{
                 fontFamily: "Montserrat",
-                overflow: "hidden"
+                overflow: "hidden",
               }}
             >
-              <a href={coin?.links.homepage[0]} target="_blank" rel="noreferrer">
-              &nbsp;{coin?.links.homepage[0]}
+              <a
+                href={coin?.links.homepage[0]}
+                target="_blank"
+                rel="noreferrer"
+              >
+                &nbsp;{coin?.links.homepage[0]}
               </a>
             </Typography>
-
           </span>
-         
+
           {user && (
             <Button
               variant="outlined"

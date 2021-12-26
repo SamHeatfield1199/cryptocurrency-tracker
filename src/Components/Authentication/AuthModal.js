@@ -9,7 +9,7 @@ import { auth } from "../../firebase";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Login from "./Login";
 import SignUp from "./SignUp";
-import { GoogleButton } from 'react-google-button';
+import { GoogleButton } from "react-google-button";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -18,13 +18,13 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
     width: 400,
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    border: "2px solid #000",
     boxShadow: 24,
     p: 4,
     color: "white",
@@ -123,7 +123,7 @@ export default function AuthModal() {
                 value={value}
                 onChange={handleChange}
                 variant="fullWidth"
-                style={{ borderRadius: 10}}
+                style={{ borderRadius: 10 }}
               >
                 <Tab label="Login" />
                 <Tab label="Sign Up" />

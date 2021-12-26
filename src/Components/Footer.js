@@ -12,7 +12,7 @@ const Footer = () => {
     },
     a: {
       cursor: "pointer",
-      color: "#7B3094"
+      color: "#7B3094",
     },
   }));
   const classes = useStyles();

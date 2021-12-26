@@ -13,7 +13,7 @@ const CryptoContext = ({ children }) => {
   const [currency, setCurrency] = useState("RUB");
   const [symbol, setSymbol] = useState("₽");
   const [user, setUser] = useState();
-  
+
   const [watchList, setWatchList] = useState([]);
   const [alert, setAlert] = useState({
     open: false,
@@ -24,7 +24,6 @@ const CryptoContext = ({ children }) => {
   const fetchCoins = async () => {
     setLoading(true);
     const { data } = await axios.get(CoinList(currency));
-    console.log(data);
     setCoins(data);
     setLoading(false);
   };
@@ -35,19 +34,17 @@ const CryptoContext = ({ children }) => {
   }, [currency]);
 
   useEffect(() => {
- onAuthStateChanged(auth, user =>{
-   if(user) setUser(user)
-   else setUser(null)
- })
-
-  }, [])
+    onAuthStateChanged(auth, (user) => {
+      if (user) setUser(user);
+      else setUser(null);
+    });
+  }, []);
 
   useEffect(() => {
     if (user) {
       const coinRef = doc(db, "watchlist", user?.uid);
       var unsubscribe = onSnapshot(coinRef, (coin) => {
         if (coin.exists()) {
-          console.log(coin.data().coins);
           setWatchList(coin.data().coins);
         } else {
           console.log("No Items in Watchlist");
@@ -72,7 +69,7 @@ const CryptoContext = ({ children }) => {
         alert,
         setAlert,
         user,
-        watchList
+        watchList,
       }}
     >
       {children}
