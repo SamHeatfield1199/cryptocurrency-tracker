@@ -9,5 +9,5 @@ Data provided by [Coin Gecko API](https://www.coingecko.com/en/api)
 - Material UI
 - ContextAPI
 
-## Live Demo:
- [Crypto Atlas](https://git.heroku.com/crypto-atlas.git)
+## Demo:
+ Live Site - [Crypto Atlas](https://crypto-atlas.herokuapp.com/)
